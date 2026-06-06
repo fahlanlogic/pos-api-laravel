@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('name', 100);
             $table->decimal('price', 15, 2);
-            $table->string('size', 100);
+            $table->enum('size', ['regular', 'large']);
             $table->integer('stock');
 
             $table->timestamps();

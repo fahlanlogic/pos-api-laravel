@@ -8,4 +8,10 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/products', [ProductController::class, 'index']);
+Route::apiResource('/products', ProductController::class);
+// ->missing(function () {
+//     return response()->json([
+//         'status' => 'error',
+//         'message' => 'Product not found'
+//     ], 404);
+// });

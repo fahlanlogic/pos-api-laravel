@@ -10,7 +10,7 @@
   "lint-staged": {
     "*.php": [
         "./vendor/bin/pint",
-        "./vendor/bin/phpstan analyse"
+        "./vendor/bin/phpstan analyse --memory-limit=-1"
     ]
   },
   "devDependencies": {

@@ -22,4 +22,9 @@ class Product extends Model
         'size',
         'stock',
     ];
+
+    // konversi data otomatis saat JSON digenerate
+    protected $casts = [
+        'price' => 'integer',
+    ];
 }
