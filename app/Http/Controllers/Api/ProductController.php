@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
@@ -38,9 +39,21 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'size' => ['required', 'string', Rule::in(['regular', 'large'])],
             'stock' => 'required|integer',
+            'image' => 'nullable|image|mimes:jpg,png,jpeg,webp|max:2048',
         ]);
 
-        $products = Product::create($request->all());
+        $data = $request->all();
+
+        // cek request ada image atau gak
+        if ($request->hasFile('image')) {
+            // simpan image ke storage/app/public/products/
+            $path = $request->file('image')->store('products', 'public');
+
+            // simpan url image ke database
+            $data['image_url'] = Storage::url($path);
+        }
+
+        $products = Product::create($data);
 
         Log::info('Product created', ['product' => $products]);
 

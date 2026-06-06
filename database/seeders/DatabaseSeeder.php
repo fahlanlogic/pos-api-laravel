@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             'price' => 25000,
             'size' => 'regular',
             'stock' => 50,
+            'image_url' => null,
         ]);
 
         Product::create([
@@ -35,6 +36,7 @@ class DatabaseSeeder extends Seeder
             'price' => 30000,
             'size' => 'large',
             'stock' => 30,
+            'image_url' => null,
         ]);
 
         Product::create([
@@ -42,6 +44,7 @@ class DatabaseSeeder extends Seeder
             'price' => 20000,
             'size' => 'regular',
             'stock' => 40,
+            'image_url' => null,
         ]);
     }
 }

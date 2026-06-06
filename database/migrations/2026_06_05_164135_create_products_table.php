@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('price', 15, 2);
             $table->enum('size', ['regular', 'large']);
             $table->integer('stock');
+            $table->string('image_url')->nullable();
 
             $table->timestamps();
         });

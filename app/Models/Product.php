@@ -21,6 +21,7 @@ class Product extends Model
         'price',
         'size',
         'stock',
+        'image_url',
     ];
 
     // konversi data otomatis saat JSON digenerate
