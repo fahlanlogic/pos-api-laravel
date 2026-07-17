@@ -47,3 +47,11 @@ POS Domain
 ├── Sales
 └── Orders
 ```
+
+# CLI PHP Artisan
+
+`php artisan make:controller ProductController` : buat modul Controller
+
+`php artisan make:migration create_product_table` : buat file migration
+
+`php artisan migrate` : jalankan file migration yang belum di migrate
