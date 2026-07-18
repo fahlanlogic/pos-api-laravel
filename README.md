@@ -55,3 +55,5 @@ POS Domain
 `php artisan make:migration create_product_table` : buat file migration
 
 `php artisan migrate` : jalankan file migration yang belum di migrate
+
+`php artisan make:model Product` : buat model baru
